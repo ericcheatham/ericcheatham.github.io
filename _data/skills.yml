@@ -1,0 +1,11 @@
+- name: Go
+- name: Python
+- name: JavaScript
+- name: GraphQL
+- name: AWS
+- name: PostgreSQL
+- name: DynamoDB
+- name: Scala
+- name: gRPC
+- name: Node.js
+- name: Git

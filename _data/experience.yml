@@ -1,0 +1,37 @@
+- company: Carry
+  title: Senior Software Engineer
+  dates: Aug 2025 - Present
+  location: Brooklyn, NY
+  summary: Owns core money movement systems for tax-advantaged investing products.
+  tech: Python, Django, PostgreSQL, AWS
+
+- company: SPILL
+  title: Senior Backend Engineer
+  dates: Dec 2023 - Jul 2025
+  location: New York City
+  summary: Migrated our database from DynamoDB to PostgreSQL, built serverless GraphQL APIs with AWS AppSync, and cut response times by 40%.
+  tech: Python, JavaScript, AWS Lambda, AppSync, DynamoDB, PostgreSQL, GraphQL
+
+- company: Meroxa
+  title: Senior Backend Software Engineer
+  dates: Jan 2022 - Oct 2023
+  location: Atlanta, GA
+  summary: Built turbine-py, an async Python framework for real-time data apps. Brought Apache Flink into the platform and wrote gRPC connectors for ConduitIO.
+  tech: Python, Go, gRPC, Apache Flink, Kafka
+  links:
+    - label: turbine-py on PyPI
+      url: https://pypi.org/project/turbine-py/
+
+- company: Dwolla
+  title: Senior Product Software Engineer
+  dates: Jun 2018 - Jan 2022
+  location: Des Moines, IA
+  summary: Built containerized microservices for payment processing. Cut customer success interactions by 60% and manual verification rates by 60%.
+  tech: Scala, ElasticSearch, Thrift, Finagle
+
+- company: Workiva
+  title: Site Reliability Engineer
+  dates: May 2013 - May 2018
+  location: Ames, IA
+  summary: Infrastructure automation and reliability engineering. Started as a Software Support Engineer doing root cause analysis and building self-service tooling.
+  tech: Python, Infrastructure Automation

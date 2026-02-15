@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Cheatham - Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer | Go | Python | JavaScript | Microservice Design">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-header__name">EC</a>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" role="navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero__greeting">Hi, I'm</p>
+        <h1 class="hero__name">Eric Cheatham</h1>
+        <h2 class="hero__title">Senior Software Engineer</h2>
+        <p class="hero__summary">
+          Backend engineer with 12+ years of experience building APIs and microservices
+          across social media, data infrastructure, and fintech. Based in Brooklyn, NY.
+        </p>
+        <div class="hero__links">
+          <a href="https://www.linkedin.com/in/ericjcheatham/" class="btn btn--primary" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ericcheatham" class="btn btn--outline" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:ericjcheatham@gmail.com" class="btn btn--outline">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section__title">About</h2>
+        <div class="about__content">
+          <p>
+            I'm a Senior Software Engineer who builds backend systems with an API-first
+            approach. I like making things that are efficient, scalable, and actually
+            solve the problem at hand.
+          </p>
+          <p>
+            I've worked across social platforms, real-time data infrastructure, fintech,
+            and payment systems. I've migrated databases to cut query times by 40%, built
+            Python frameworks for real-time data processing, and designed PCI-compliant
+            payment integrations.
+          </p>
+          <p>
+            I have a B.S. in Computer Engineering from Iowa State University.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__grid">
+          {% for skill in skills %}
+          <span class="skills__tag">{{ skill.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h2 class="section__title">Experience</h2>
+        <div class="experience__timeline">
+          {% for job in experience %}
+          <div class="experience__item">
+            <div class="experience__header">
+              <h3 class="experience__company">{{ job.company }}</h3>
+              <span class="experience__dates">{{ job.dates }}</span>
+            </div>
+            <p class="experience__role">{{ job.title }} &middot; {{ job.location }}</p>
+            <p class="experience__summary">{{ job.summary }}</p>
+            <p class="experience__tech">{{ job.tech }}</p>
+            {% if job.links %}
+            <div class="experience__links">
+              {% for link in job.links %}
+              <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section education">
+      <div class="container">
+        <h2 class="section__title">Education</h2>
+        <div class="education__item">
+          <h3>Iowa State University</h3>
+          <p>Bachelor of Science, Computer Engineering &middot; 2008 - 2013</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section__title">Get in Touch</h2>
+      <p class="contact__text">
+        Interested in working together? Drop me a line.
+      </p>
+      <div class="contact__links">
+        <a href="mailto:ericjcheatham@gmail.com" class="btn btn--primary">Email</a>
+        <a href="https://www.linkedin.com/in/ericjcheatham/" class="btn btn--outline" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ericcheatham" class="btn btn--outline" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="contact__copyright">&copy; {{ year }} Eric Cheatham</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
