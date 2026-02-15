@@ -1,73 +1,54 @@
-# Wowfolio 🦄
+# ericcheatham.github.io
 
-## A Simple & Clean Portfolio Template For Developers 👨‍💻
+Personal portfolio site for Eric Cheatham. Built with Python (Jinja2 + PyYAML) and deployed to GitHub Pages via GitHub Actions.
 
-<div align="center">
-  <img src="https://i.postimg.cc/wMhtzfw7/ezgif-com-gif-maker-1.gif" alt="Wowfolio Demo" width="100%" />
-  <br>
-</div>
+## Project Structure
 
-<br/>
-
----
-
-<br/>
-
-## Test the template with different colours using the colour picker 🎨
-
-This is very helpful for you as you can test the template with different
-colours and see which colour fits your needs so you can use that colour for your own website.
-
-<br/>
-
-<div align="center">
-  <img src="https://i.postimg.cc/B6dQ6SSZ/ezgif-com-gif-maker-2.gif" alt="Wowfolio Color Tester" width="100%" />
-  <br>
-</div>
-
-<br/>
-
-**Important Note**: Once you found the perfect colour for your site then just note the RGB value of the colour and then go inside this file called `style.css` on line number **9**, and replace the value of the **--themeColor** variable with your RGB value as shown in the below code example so you can see the colour change in your website.
-
-```css
-:root {
-  --themeColor: 29, 161, 242; /* Theme Color in (R,G,B) format */
-}
+```
+.
+├── build.py              # Renders templates with data, outputs to _site/
+├── templates/
+│   └── index.html        # Jinja2 template for the site
+├── _data/
+│   ├── experience.yml    # Work history
+│   └── skills.yml        # Skills list
+├── assets/
+│   └── css/
+│       └── style.css     # Stylesheet
+├── requirements.txt      # Python dependencies
+└── .github/
+    └── workflows/
+        └── deploy.yml    # GitHub Actions build + deploy
 ```
 
-<br/>
+## Local Development
 
----
+Requires Python 3.9+.
 
-<br/>
+```bash
+# Create and activate a virtual environment
+python3 -m venv env
+source env/bin/activate
 
-## Technologies used 🛠️
+# Install dependencies
+pip install -r requirements.txt
 
-- **HTML** 💀
-- **CSS** 🌈
-- **JavaScript** 🧠
+# Build the site
+python build.py
 
-<br/>
+# Open it
+open _site/index.html
+```
 
----
+The build script reads YAML data from `_data/`, renders the Jinja2 template, and writes the output to `_site/`.
 
-<br/>
+## Updating Content
 
-## Drop a Star ⭐
+- **Experience**: Edit `_data/experience.yml`
+- **Skills**: Edit `_data/skills.yml`
+- **Everything else** (about text, hero, contact links): Edit `templates/index.html`
+- **Styles**: Edit `assets/css/style.css`
 
-If you like this project then drop a **Github** star by pressing the **Star** button ⭐
+## Deployment
 
-<br>
-
----
-
-<br>
-
-## Author 👨‍💻
-
-**Ram Maheshwari ⚡**
-
-Support me by giving me a Follow/Subscribe on my Social Accounts 🔥
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/rammcodes) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/rammcodes) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/rammcodes_) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@rammcodes)
-<br>
+Pushes to `main` trigger a GitHub Actions workflow that builds the site and deploys to GitHub Pages. Make sure your repo's Pages settings are set to source: **GitHub Actions**.
