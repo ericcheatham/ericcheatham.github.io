@@ -146,6 +146,25 @@ body {
   line-height: 1.8;
 }
 
+.hero__container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero__text {
+  flex: 1;
+}
+
+.hero__photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
 .hero__links {
   display: flex;
   gap: 1rem;
@@ -340,6 +359,20 @@ body {
 
   .section {
     padding: 3.5rem 0;
+  }
+
+  .hero__container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero__photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero__links {
+    justify-content: center;
   }
 
   .experience__header {
